@@ -1,0 +1,68 @@
+﻿<Window x:Class="Gallery.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid Name="mainGrid" SizeChanged="mainGrid_SizeChanged">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+        <StackPanel Name ="stack1" HorizontalAlignment="Left" Height="Auto" Margin="5,5,0,0" VerticalAlignment="Top" Width="100">
+            <ListBox Name ="listBox" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height= "Auto" ScrollViewer.CanContentScroll="True" BorderThickness="0" SelectionChanged="listBox_SelectionChanged"/>
+        </StackPanel>
+        <!--<Canvas Name ="canvas" Grid.Row="0" Margin="110, 5" Background="AliceBlue">
+            <Image Name ="image" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="240" Source="C:\Users\Дима\Desktop\Q-Fnhc8yOB4.jpg"/>
+        </Canvas>-->
+        <!--<StackPanel Name ="stack2" Grid.Row="0" Margin="110, 5" Background="AliceBlue" SizeChanged="StackPanel_SizeChanged_1">
+            <Image Name ="image" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="240" Source="C:\Users\Дима\Desktop\Q-Fnhc8yOB4.jpg"/>
+        </StackPanel>-->
+        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="105,5,105,0">
+            <WrapPanel Name="wrap" Grid.Row="0" Visibility="Hidden"/>
+        </ScrollViewer>
+        <Button Name="btnPrev" IsEnabled="False" Content="Prev" HorizontalAlignment="Left" Margin="10,10,10,10" Grid.Row="2" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.137,-0.389" Click="Button_Click_2"/>
+        <Button Content="Next" IsEnabled="False" HorizontalAlignment="Right" Margin="10,10,10,10" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Slider Name="slider" IsEnabled="False" HorizontalAlignment="Center" Margin="20,10,20,10" VerticalAlignment="Top" Grid.Row="2" Width="337"/>
+        <StackPanel Name="stackWithRadio" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Grid.Row="1" Grid.RowSpan="1" Width="350" IsEnabled="False">
+            <RadioButton Name="_1" Content="1" Margin="20, 3, 30, 2" Click="RadioButton_Click"/>
+            <RadioButton Name="_2" Content="2" Margin="20, 3, 30, 2" Click="RadioButton_Click"/>
+            <RadioButton Name="_3" Content="3" Margin="20, 3, 30, 2" Click="RadioButton_Click"/>
+            <RadioButton Name="_4" Content="4" Margin="20, 3, 30, 2" Click="RadioButton_Click"/>
+            <RadioButton Name="_5" Content="5" Margin="20, 3, 30, 2" Click="RadioButton_Click"/>
+        </StackPanel>
+        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Right" Height="Auto" Margin="5,5,0,0" VerticalAlignment="Top" Width="100">
+            <StackPanel Name ="stack3">
+                <Expander Header="Свойства" Name="properties">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Размер:" Grid.Row="0"/>
+                        <TextBlock Name="size" Text="" Grid.Row="1"/>
+                        <TextBlock Text="" Grid.Row="2"/>
+                        <TextBlock Text="Разрешение:" Grid.Row="3"/>
+                        <TextBlock Name="extention" Text="" Grid.Row="4"/>
+                    </Grid>
+                </Expander>
+                <Expander Header="Фильтр" Name="filter">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="44*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="По оценке:" Grid.Row="0" Grid.ColumnSpan="2"/>
+                        <ComboBox Name="combo" Margin="2,1,3,1" Grid.Row="1" Grid.ColumnSpan="2" SelectionChanged="combo_SelectionChanged"/>
+                    </Grid>
+                </Expander>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
